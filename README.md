@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # vizin.io <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" /> <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" />  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
 
 
@@ -55,4 +54,3 @@ Não se esqueça que após mexer nas configurações do servidor, você terá qu
 =======
 # Vizin.IO
 Projeto de app para Atividade da Graduação do SENAC
->>>>>>> 80cc711a16ed5d85549a00a0dc17de2d92e69026
