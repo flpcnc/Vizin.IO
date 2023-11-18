@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <button id="voltar" onclick="location.href='inicial.php'"><img id="imgBack" src="img/backArrow.png"></button>
-	<title>Vizin.IO - Chat da vizinhança</title>
+    <meta charset="UTF-8">
+    <title>Vizin.IO - Chat da vizinhança</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         main {
-        text-align: center;
-        margin-top: 50px;
+            text-align: center;
+            margin-top: 50px;
         }
 
         img {
-        max-width: 100%;
-        height: auto;
-        margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
-	</style>
+
+        #voltar {
+            margin-top: 20px; /* Adicionado espaço acima do botão voltar */
+            background-color: #F5F5F5;
+        }
+
+        #imgBack {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    </style>
 </head>
 <body>
-	<header>
-		<h1>Vizin.IO</h1>
-	</header>
-	<main>
-		<h2>Chat da vizinhança</h2>
-		<img src="img/Chat.jpg" alt="Mapa do bairro">
-		<p>Acima, apenas uma imagem de exemplo de como seria um chat no bairro.</p>
-        
-	</main>
+    <header>
+        <button id="voltar" onclick="history.back()"><img id="imgBack" src="img/backArrow.png"></button>
+        <h1>Vizin.IO</h1>
+    </header>
+    <main>
+        <h2>Chat da vizinhança</h2>
+        <img src="img/Chat.jpg" alt="Mapa do bairro">
+        <p>Acima, apenas uma imagem de exemplo de como seria um chat no bairro.</p>
+    </main>
 </body>
 </html>

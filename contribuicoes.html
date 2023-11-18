@@ -1,47 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <button id="voltar" onclick="location.href='inicial.php'"><img id="imgBack" src="img/backArrow.png"></button>
-	<title>Vizin.IO - Contribuições</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <style>
-        body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        }
-
-        main {
-        text-align: center;
-        margin-top: 50px;
-        }
-
-        img {
-        max-width: 100%;
-        height: auto;
-        margin-top: 20px;
-        }
-
-        h1{
-            margin-bottom: 0rem;
-        }
-	</style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Vizin.IO - Contribuições</title>
 </head>
+
 <body>
-	<header>
-		<h1>Vizin.IO</h1>
-	</header>
-	<main>
-		<h2>O Vizin.io é um aplicativo sem fins lucrativos, <br> portanto contamos com o auxílio da comunidade de usuários para manter o app funcionando.</h2>
-        <div class="contrib">
-            <button onclick="location.href='em_const.html'"><img id="imgser" src="img/pix.png"></button>
-            <button onclick="location.href='em_const.html'"><img id="imgser" src="img/invista.png"></button>
-            <button onclick="location.href='em_const.html'"><img id="imgser" src="img/sugestoes.png"></button>
-        </div>   
-		<p>Acima, apenas uma imagem de exemplo de posibilidades de receber ajuda com o app.</p>        
-	</main>
+    <header>
+        <button id="voltar" onclick="history.back()"><img id="imgBack" src="img/backArrow.png"></button>
+        <h1>Vizin.IO</h1>
+    </header>
+    <main>
+        <h2>O Vizin.io é um aplicativo sem fins lucrativos, <br> portanto contamos com o auxílio da comunidade de usuários para manter o app funcionando.</h2>
+        <div class="servicos">
+            <button id="btnPix" class="servico-btn"><img id="imgser" src="img/pix.png"></button>
+            <button id="btnInvista" class="servico-btn"><img id="imgser" src="img/invista.png"></button>
+            <button id="btnSugestoes" class="servico-btn"><img id="imgser" src="img/sugestoes.png"></button>
+        </div>
+        <p>Acima, apenas uma imagem de exemplo de possibilidades de receber ajuda com o app.</p>
+    </main>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

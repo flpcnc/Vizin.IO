@@ -22,19 +22,21 @@ include_once 'conexao.php';
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
     if (!empty($dados['SendLogin'])) {
-        $query_usuario = "SELECT *
+        $query_usuario = "SELECT id, nome, usuario, senha_usuario, salt
                           FROM usuarios 
-                          WHERE usuario = '" . $dados['usuario'] . "' 
-                            ";
+                          WHERE usuario = ?";
         $result_usuario = $conn->prepare($query_usuario);
+        $result_usuario->bind_param("s", $dados['usuario']);
         $result_usuario->execute();
+        $result_usuario->store_result();
 
+        if ($result_usuario->num_rows != 0) {
+            $result_usuario->bind_result($id, $nome, $usuario, $senha_usuario, $salt);
+            $result_usuario->fetch();
 
-        if (($result_usuario) and ($result_usuario->rowCount() != 0)) {
-            $row_usuario = $result_usuario->fetch();
-            if (password_verify($dados['senha_usuario'] . $row_usuario['salt'], $row_usuario['senha_usuario'])) {
-                $_SESSION['id'] = $row_usuario['id'];
-                $_SESSION['nome'] = $row_usuario['nome'];
+            if (password_verify($dados['senha_usuario'] . $salt, $senha_usuario)) {
+                $_SESSION['id'] = $id;
+                $_SESSION['nome'] = $nome;
                 header("Location: menu");
             } else {
                 $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Senha inválida!</p>";
@@ -42,7 +44,7 @@ include_once 'conexao.php';
         } else {
             $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Usuário inválido!</p>";
         }
-
+        $result_usuario->close();
     }
 
     if (isset($_SESSION['msg'])) {
@@ -64,9 +66,8 @@ include_once 'conexao.php';
                 echo $dados['senha_usuario'];
             } ?>"><br><br>
         <br>
-        <input type="submit" value="Entar" name="SendLogin" class="btn">
+        <input type="submit" value="Entrar" name="SendLogin" class="btn">
     </form>
-
 
 </body>
 

@@ -37,12 +37,14 @@ include_once 'conexao.php';
 
             $query_login = "SELECT *
                         FROM usuarios 
-                        WHERE usuario ='" . $dados['usuario'] . "'";
+                        WHERE usuario = ?";
 
             $result_login = $conn->prepare($query_login);
+            $result_login->bind_param("s", $dados['usuario']);
             $result_login->execute();
+            $result_login->store_result();
 
-            if ($result_login->rowCount() != 0) {
+            if ($result_login->num_rows != 0) {
                 $_SESSION['msg'] = "<p style='color: #ff0000'>Este usuário já está em uso!</p>";
             } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $_SESSION['msg'] = "<p style='color: #ff0000'>Formato de e-mail inválido</p>";
@@ -52,9 +54,10 @@ include_once 'conexao.php';
                 $hashedPass = password_hash($senha_usuario . $salt, PASSWORD_DEFAULT);
 
                 $query_novo_usuario = "INSERT INTO usuarios (nome, email, usuario, senha_usuario, salt) 
-                               VALUES ('$nome', '$email', '$usuario', '$hashedPass', '$salt')";
+                               VALUES (?, ?, ?, ?, ?)";
 
                 $result_novo_usuario = $conn->prepare($query_novo_usuario);
+                $result_novo_usuario->bind_param("sssss", $nome, $email, $usuario, $hashedPass, $salt);
                 $result_novo_usuario->execute();
 
                 if (true) {

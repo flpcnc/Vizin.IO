@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/post.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -24,11 +26,14 @@
       </a>
     </div>
 
-    <div class="logo">
-      <a href="menu">
-        <img src="img/vizin.io.png" width="100px" />
-      </a>
-    </div>
+	<div class="logo">
+	  <img src="img/vizin.io.png" width="100px" />
+	</div>
+	
+	<button id="voltar" onclick="history.back()">
+	  <i class="material-icons">arrow_back</i>
+	</button>
+
   </header>
 
   <div id="content">

@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -110,18 +109,18 @@ button:hover {
 
 .servicos {
   width: 100%;
-  max-width: 100px;
-  margin: 0 auto;
-  margin-left: 50rem;
+  max-width: 500px;
+  margin: 0 auto; /* Alterado para margem automática à esquerda e à direita */
   text-align: center;
   background-color: #F5F5F5;
 }
+}
 
 #imgser {
-  width: 20rem;
-  height: 5rem; 
-  text-align: center;  
+  width: 4rem; /* Ajuste o valor conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
 }
+
 
 .contrib {
   width: 100%;
@@ -131,5 +130,3 @@ button:hover {
   text-align: center;
   background-color: #F5F5F5;
 }
-
-

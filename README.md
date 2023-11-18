@@ -51,6 +51,3 @@ Não se esqueça que após mexer nas configurações do servidor, você terá qu
 
 #### Realizar postagem
 ![Criação de postagem](prints/post2.PNG)
-=======
-# Vizin.IO
-Projeto de app para Atividade da Graduação do SENAC
